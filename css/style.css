@@ -50,6 +50,7 @@ body {
   --primary-color: #03bafc;
   --white: #ffffff;
   --black: #000000;
+  --grey: #252729;
 }
 
 /* CONTAINER-SECTION */
@@ -88,7 +89,22 @@ body {
   font-weight: 600;
   color: var(--black);
   text-decoration: none;
+  position: relative;
   text-transform: uppercase;
+}
+
+#navbar .navigation .nav-item .nav-link::before{
+  width: 0;
+  content: '';
+  bottom: -2px;
+  height: .1875rem;
+  position: absolute;
+  transition: all 0.5s ease;
+  background-color: var(--primary-color);
+}
+
+#navbar .navigation .nav-item .nav-link:hover::before{
+  width: 80%;
 }
 
 .active {
@@ -136,9 +152,25 @@ body {
   border: none;
   padding: 1rem;
   color: white;
-  font-size: 1.5rem;
+  position: relative;
   cursor: pointer;
+  font-size: 1.5rem;
   background-color: var(--primary-color);
+}
+
+
+#banner-section .hero-outer-wrapper .hero-btn::before{
+  position: absolute;
+  content: '';
+  width: 0;
+  bottom: .25rem;
+  height: .1875rem;
+  background-color: var(--white);
+  transition: all 0.5s ease;
+}
+
+#banner-section .hero-outer-wrapper .hero-btn:hover::before{
+  width: 80%;
 }
 
 #banner-section .hero-outer-wrapper span {
@@ -167,10 +199,7 @@ body {
 }
 
 /* WORK-SECTION */
-#work-section {
-}
-
-#work-section .title {
+#team-section .title {
   font-size: 2rem;
   padding: 2rem;
   box-shadow: 0 1px 1px #e0e0d1;
@@ -220,22 +249,45 @@ body {
 .inner-work-wrapper .card-text {
   margin-bottom: 3rem;
   font-size: 1rem;
+  color: var(--grey);
 }
 
 .inner-work-wrapper .card-btn {
   border: none;
-  margin-bottom: 2rem;
   font-size: 1rem;
   cursor: pointer;
+  margin-bottom: 2rem;
   text-transform: capitalize;
   color: var(--primary-color);
+  position: relative;
   background-color: transparent;
 }
+
+
+
+.inner-work-wrapper .card-btn::before{
+  content: '';
+  width: 0;
+  bottom: -4px;
+  height: .1875rem;
+  position: absolute;
+  transition: all 0.5s ease;
+  background-color: var(--primary-color);
+}
+
+
+
+.inner-work-wrapper .card-btn:hover::before{
+  width: 80%;
+}
+
+
 
 /* ABOUT-SECTION */
 #about-section .about-title {
   font-size: 2rem;
   padding: 2rem;
+  font-weight: normal;
   box-shadow: 0 1px 1px #e0e0d1;
   text-transform: capitalize;
   color: var(--primary-color);
@@ -254,7 +306,7 @@ body {
 .about-inner-title {
   text-align: center;
   font-size: 1.2rem;
-  font-weight: none;
+  font-weight: normal;
   margin-bottom: 2rem;
   color: var(--primary-color);
 }
@@ -263,8 +315,9 @@ body {
 .about-second-text {
   font-size: 1rem;
   margin-bottom: 1rem;
-  font-weight: none;
+  font-weight: normal;
   padding: 1rem;
+  color: var(--grey);
   line-height: 1.4rem;
 }
 
@@ -279,7 +332,7 @@ body {
 
 .inner-work-wrapper .card-text{
   line-height: 1.3rem;
-  font-weight: 0;
+  font-weight: normal;
 }
 
 .inner-work-wrapper .team i{
@@ -316,6 +369,7 @@ body {
 #footer-section .row .col-3 .title{
     font-size: 1rem;
     margin-bottom: 2rem;
+    font-weight: normal;
     text-transform: capitalize;
     color: var(--primary-color);
 }
@@ -324,8 +378,8 @@ body {
 
 #footer-section .row .col-3 .sub-title{
   font-size: 1rem;
-  margin-bottom: 0.6rem;
   font-weight: bold;
+  margin-bottom: 0.6rem;
   text-transform: capitalize;
 }
 
@@ -335,14 +389,33 @@ body {
   color: black;
   font-size: 1rem;
   line-height: 1.4rem;
+  color: var(--grey);
 }
 
 
 #footer-section ul li a{
     text-decoration: none;
     line-height: 1.3rem;
-    color: var(--black);
+    color: var(--grey);
+    position: relative;
 }
+
+
+#footer-section ul li a::before{
+  content: '';
+  width: 0;
+  bottom: -1px;
+  position: absolute;
+  height: .1875rem;
+  transition: all 0.5s ease;
+  background-color: var(--primary-color);
+}
+
+
+#footer-section ul li a:hover::before{
+  width: 100%;
+}
+
 
 
 .footer-imager-wrapper img{
@@ -361,35 +434,33 @@ footer{
 
 
 footer p a{
-  font-weight: none;
+  font-weight: normal;
   text-decoration: none;
+  position: relative;
   color: var(--primary-color);
 }
+
+
+footer p a::before{
+  width: 0;
+  content: '';
+  position: absolute;
+  height: .1875rem;
+  bottom: -3px;
+  transition: all 0.5s ease;
+  background-color: var(--primary-color);
+}
+
+
+
+footer p a:hover::before{
+  width: 100%;
+}
+
+
 
 footer .social-icons i{
   color: var(--primary-color);
   padding: 0 0.5rem;
   font-size: 1.3rem;
-}
-
-
-
-/* MOBILE-RESPONSIVE-DESIGN */
-
-@media only screen and (max-width: 768px){
-  .container{
-    width: 720px;
-  }
-
-  [class*="col-"] {
-    width: 100%;
-  }
-
-  .about-wrapper{
-    flex-direction: column;
-  }
-
-  .hero-inner-wrapper, .hero-outer-wrapper span{
-    display: none;
-  }
 }
